@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320" fill="none" role="img" >
+  <defs>
+    <linearGradient id="tfEmber" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff8a4c"/><stop offset="1" stop-color="#d96b3b"/></linearGradient>
+    <linearGradient id="tfViolet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8fa5ff"/><stop offset="1" stop-color="#5e6ad2"/></linearGradient>
+    <linearGradient id="tfGold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7bd82"/><stop offset="1" stop-color="#8f7248"/></linearGradient>
+    <radialGradient id="tfGlow" cx="50%" cy="50%" r="50%"><stop stop-color="#d96b3b" stop-opacity=".48"/><stop offset="1" stop-color="#d96b3b" stop-opacity="0"/></radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#000" flood-opacity=".34"/></filter>
+  </defs>
+  
+<title>TinyFoundry User model key card</title>
+<rect x="24" y="24" width="432" height="272" rx="28" fill="#111316" stroke="#ffffff22"/><rect x="44" y="44" width="132" height="28" rx="14" fill="#d96b3b22" stroke="#d96b3b55"/><text x="62" y="63" fill="#ffb08b" opacity="1" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" font-weight="700" text-anchor="start" letter-spacing="2">CHOSEN MODEL</text><text x="44" y="112" fill="#f7f8f8" opacity="1" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="750" text-anchor="start" letter-spacing="-1.2">User model key</text><circle cx="92" cy="173" r="28" stroke="url(#tfGold)" stroke-width="12"/><path d="M120 173h96m-26 0v26m25-26v17" stroke="url(#tfGold)" stroke-width="12" stroke-linecap="square"/><circle cx="282" cy="152" r="5" fill="#d96b3b"/><text x="298" y="158" fill="#f7f8f8" opacity=".72" font-family="Inter, ui-sans-serif, system-ui" font-size="15">Draft commentary</text><circle cx="282" cy="186" r="5" fill="#d96b3b"/><text x="298" y="192" fill="#f7f8f8" opacity=".72" font-family="Inter, ui-sans-serif, system-ui" font-size="15">Explain assumptions</text><circle cx="282" cy="220" r="5" fill="#d96b3b"/><text x="298" y="226" fill="#f7f8f8" opacity=".72" font-family="Inter, ui-sans-serif, system-ui" font-size="15">Reviewable output</text>
+</svg>
