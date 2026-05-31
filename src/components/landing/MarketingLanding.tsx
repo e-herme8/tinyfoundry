@@ -19,7 +19,7 @@ import {
 import { motion, useReducedMotion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { LogoPrototypeGrid, TinyFoundryLogo } from '../brand/LogoMarks';
+import { TinyFoundryLogo } from '../brand/LogoMarks';
 
 type MarketingLandingProps = {
   onDemo: () => void;
@@ -357,10 +357,6 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
             </article>
           ))}
         </div>
-      </SectionShell>
-
-      <SectionShell id="logo" eyebrow="Logo prototypes" title="Five marks for a micro-app foundry." intro="I am leaning toward Cellmark Forge for clarity, with Anvil T as the premium wordmark direction. These are custom SVG marks, not icon-pack placeholders.">
-        <LogoPrototypeGrid />
       </SectionShell>
 
       <SectionShell id="use-cases" eyebrow="Use cases" title="Small apps for serious work." intro="The first wedge is not a platform. It is one workflow your team repeats every week, packaged into something safer and easier to reuse.">
