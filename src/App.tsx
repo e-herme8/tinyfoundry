@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, stagger } from 'animejs';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ArrowLeft, CheckCircle2, FileSpreadsheet, KeyRound, Play, Send, WandSparkles } from 'lucide-react';
+import { ArrowLeft, CheckCircle, FileXls, Key, MagicWand, PaperPlaneTilt, Play } from '@phosphor-icons/react';
 import { MarketingLanding } from './components/landing/MarketingLanding';
 import { Button } from './components/ui/Button';
 import { Badge } from './components/ui/Badge';
@@ -103,7 +103,7 @@ function DemoPage({ onBack }: DemoPageProps) {
 
       <nav data-demo-reveal className="relative z-10 mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-white/[0.045] px-4 py-3 opacity-100 backdrop-blur-xl">
         <button type="button" onClick={onBack} className="inline-flex items-center gap-2 text-sm font-medium text-zinc-300 transition hover:text-white">
-          <ArrowLeft className="h-4 w-4" /> Back to landing
+          <ArrowLeft className="h-4 w-4" weight="bold" /> Back to landing
         </button>
         <Badge tone="pro" className="border-[#d96b3b]/30 bg-[#d96b3b]/10 text-[#ffd1bf]">Demo page</Badge>
       </nav>
@@ -123,7 +123,7 @@ function DemoPage({ onBack }: DemoPageProps) {
               <div className="absolute inset-x-0 top-0 h-1 origin-left bg-gradient-to-r from-[#d96b3b] to-[#5e6ad2]" data-progress-bar />
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs text-zinc-600">0{index + 1}</span>
-                {index === 0 ? <FileSpreadsheet className="h-5 w-5 text-[#f4c7b1]" /> : index === 1 ? <WandSparkles className="h-5 w-5 text-[#c9ceff]" /> : <CheckCircle2 className="h-5 w-5 text-emerald-300" />}
+                {index === 0 ? <FileXls className="h-5 w-5 text-[#f4c7b1]" weight="duotone" /> : index === 1 ? <MagicWand className="h-5 w-5 text-[#c9ceff]" weight="duotone" /> : <CheckCircle className="h-5 w-5 text-emerald-300" weight="fill" />}
               </div>
               <h2 className="mt-8 text-2xl font-semibold tracking-[-0.05em] text-white">{step.title}</h2>
               <p className="mt-4 text-sm leading-6 text-zinc-400">{step.body}</p>
@@ -143,7 +143,7 @@ function DemoPage({ onBack }: DemoPageProps) {
           <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.035] p-6">
             <div className="flex items-center gap-3">
               <div className="grid h-11 w-11 place-items-center rounded-2xl bg-[#d96b3b] text-white">
-                <KeyRound className="h-5 w-5" />
+                <Key className="h-5 w-5" weight="duotone" />
               </div>
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-zinc-500">Setup clarity</p>
@@ -177,10 +177,10 @@ function DemoPage({ onBack }: DemoPageProps) {
             </div>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button type="button" className="h-12 bg-[#d96b3b] px-6 text-base text-white hover:bg-[#ef7a45]">
-                Request my app sketch <Send className="ml-2 h-4 w-4" />
+                Request my app sketch <PaperPlaneTilt className="ml-2 h-4 w-4" weight="fill" />
               </Button>
               <button type="button" onClick={onBack} className="inline-flex h-10 items-center justify-center text-sm font-medium text-zinc-400 transition hover:text-white">
-                Back to landing <Play className="ml-2 h-4 w-4" />
+                Back to landing <Play className="ml-2 h-4 w-4" weight="fill" />
               </button>
             </div>
           </div>

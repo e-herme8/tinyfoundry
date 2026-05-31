@@ -1,24 +1,25 @@
 import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
+import type { Icon } from '@phosphor-icons/react';
 import {
   ArrowRight,
-  Bot,
-  CheckCircle2,
+  CheckCircle,
+  CursorClick,
   Database,
-  FileSpreadsheet,
-  FlaskConical,
-  KeyRound,
+  FileXls,
+  Flask,
+  Graph,
+  Key,
   Laptop,
-  LockKeyhole,
-  MousePointer2,
+  LockKey,
   Play,
+  Robot,
   ShieldCheck,
-  Sparkles,
-  Workflow,
-} from 'lucide-react';
+} from '@phosphor-icons/react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
+import { LogoPrototypeGrid, TinyFoundryLogo } from '../brand/LogoMarks';
 
 type MarketingLandingProps = {
   onDemo: () => void;
@@ -37,19 +38,19 @@ const painPoints = [
 
 const forgeSteps = [
   {
-    icon: FileSpreadsheet,
+    icon: FileXls,
     label: 'Selected files',
     title: 'Connect the sheets and documents you choose.',
     body: 'Excel models, CSVs, PDFs, checklists, and working folders become the raw material — not your whole computer.',
   },
   {
-    icon: KeyRound,
+    icon: Key,
     label: 'Chosen model',
     title: 'Bring the AI provider your team trusts.',
     body: 'Use your preferred LLM/API key for drafting, extraction, summarization, and reviewable reasoning where it helps.',
   },
   {
-    icon: FlaskConical,
+    icon: Flask,
     label: 'Local workbench',
     title: 'Add a controlled automation environment.',
     body: 'For repeatable jobs, TinyFoundry can set up an isolated local workspace for spreadsheet cleanup, report generation, and approved scripts.',
@@ -153,14 +154,11 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
 
       <section className="relative z-10 px-4 py-5 sm:px-6 lg:px-8">
         <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-white/[0.045] px-4 py-3 shadow-[rgba(0,0,0,0.45)_0px_18px_60px] backdrop-blur-2xl">
-          <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="group flex items-center gap-3 text-sm font-semibold tracking-[-0.02em] text-white">
-            <span className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-[#d96b3b] text-white shadow-[0_0_35px_rgba(217,107,59,0.35)] transition group-hover:scale-105">
-              <Sparkles className="h-4 w-4" />
-            </span>
-            <span>TinyFoundry</span>
+          <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="group text-white transition hover:scale-[1.015]">
+            <TinyFoundryLogo />
           </button>
 
-          <div className="hidden items-center gap-6 text-sm font-medium text-zinc-400 md:flex">
+          <div className="hidden items-center gap-6 text-sm font-medium text-zinc-300 md:flex">
             <a className="transition hover:text-white" href="#problem">Problem</a>
             <a className="transition hover:text-white" href="#how">How it works</a>
             <a className="transition hover:text-white" href="#privacy">Privacy</a>
@@ -186,7 +184,7 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
             </p>
             <div data-hero-reveal className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button type="button" onClick={onDemo} className="h-12 bg-[#d96b3b] px-6 text-base text-white shadow-[0_0_45px_rgba(217,107,59,0.35)] hover:bg-[#ef7a45]">
-                Watch a workflow become an app <ArrowRight className="ml-2 h-4 w-4" />
+                Watch a workflow become an app <ArrowRight className="ml-2 h-4 w-4" weight="bold" />
               </Button>
               <a href="#how" className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] px-6 text-base font-medium text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#d96b3b]/60">
                 See how it works
@@ -195,7 +193,7 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
             <div data-hero-reveal className="mt-9 grid gap-3 text-sm leading-6 text-zinc-400 sm:grid-cols-2">
               {['Selected files only', 'Bring your own AI model', 'Isolated local automation workspace', 'Review before important actions'].map((point) => (
                 <div key={point} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#d96b3b]" />
+                  <CheckCircle className="h-4 w-4 text-[#d96b3b]" weight="fill" />
                   {point}
                 </div>
               ))}
@@ -220,9 +218,9 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
 
               <div ref={forgeRef} className="grid gap-4 lg:grid-cols-[0.82fr_0.18fr_1fr]">
                 <div className="space-y-3">
-                  <WorkbenchNode icon={FileSpreadsheet} title="2026-tax-scenarios.xlsx" label="Selected local file" lines={['28 tabs detected', '41 formulas mapped', '6 missing fields flagged']} />
-                  <WorkbenchNode icon={KeyRound} title="Preferred model key" label="Optional AI routing" lines={['Draft commentary', 'Explain assumptions', 'No training toggle']} />
-                  <WorkbenchNode icon={FlaskConical} title="Automation workbench" label="Isolated local environment" lines={['Read workbook', 'Clean inputs', 'Generate PDF pack']} />
+                  <WorkbenchNode icon={FileXls} title="2026-tax-scenarios.xlsx" label="Selected local file" lines={['28 tabs detected', '41 formulas mapped', '6 missing fields flagged']} />
+                  <WorkbenchNode icon={Key} title="Preferred model key" label="Optional AI routing" lines={['Draft commentary', 'Explain assumptions', 'No training toggle']} />
+                  <WorkbenchNode icon={Flask} title="Automation workbench" label="Isolated local environment" lines={['Read workbook', 'Clean inputs', 'Generate PDF pack']} />
                 </div>
 
                 <div className="hidden flex-col items-center justify-center gap-5 lg:flex">
@@ -249,7 +247,7 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
 
                   <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4">
                     <div className="mb-3 flex items-center gap-2 text-sm font-medium text-white">
-                      <Bot className="h-4 w-4 text-[#d96b3b]" />
+                      <Robot className="h-4 w-4 text-[#d96b3b]" weight="duotone" />
                       AI review note
                     </div>
                     <p className="text-sm leading-6 text-zinc-400">
@@ -265,8 +263,8 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
             </div>
 
             <FloatingChip className="left-0 top-10" icon={Database} label="Local data" />
-            <FloatingChip className="right-4 top-28" icon={LockKeyhole} label="Human approval" />
-            <FloatingChip className="bottom-16 left-8" icon={Workflow} label="Reusable playbook" />
+            <FloatingChip className="right-4 top-28" icon={LockKey} label="Human approval" />
+            <FloatingChip className="bottom-6 left-8" icon={Graph} label="Reusable playbook" />
           </div>
         </div>
       </section>
@@ -297,7 +295,7 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
               <article key={step.title} className="group rounded-[1.75rem] border border-white/10 bg-[#0f1011] p-6 transition hover:-translate-y-1 hover:border-[#d96b3b]/35 hover:bg-white/[0.045]">
                 <div className="mb-8 flex items-center justify-between">
                   <div className="grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/[0.04] text-[#f4c7b1]">
-                    <Icon className="h-5 w-5" />
+                    <Icon className="h-5 w-5" weight="duotone" />
                   </div>
                   <span className="font-mono text-xs text-zinc-600">0{index + 1}</span>
                 </div>
@@ -319,7 +317,7 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
               Pick a sample workflow, see the messy input, watch TinyFoundry map fields and review gates, then preview the generated app screens.
             </p>
             <Button type="button" onClick={onDemo} className="mt-7 h-12 bg-white px-6 text-base text-zinc-950 hover:bg-zinc-200">
-              Open demo page <Play className="ml-2 h-4 w-4" />
+              Open demo page <Play className="ml-2 h-4 w-4" weight="fill" />
             </Button>
           </div>
 
@@ -339,7 +337,7 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
               ))}
             </div>
             <div className="relative mt-4 flex items-center gap-2 text-sm font-medium text-[#f4c7b1]">
-              <MousePointer2 className="h-4 w-4" /> Click to launch the simulated build
+              <CursorClick className="h-4 w-4" weight="duotone" /> Click to launch the simulated build
             </div>
           </button>
         </div>
@@ -353,12 +351,16 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
             ['Review before action', 'The app can prepare analysis, drafts, exports, and scripts. Your team approves important outputs.'],
           ].map(([title, body]) => (
             <article key={title} className="rounded-[1.75rem] border border-white/10 bg-white/[0.035] p-6">
-              <ShieldCheck className="h-6 w-6 text-emerald-300" />
+              <ShieldCheck className="h-6 w-6 text-emerald-300" weight="duotone" />
               <h3 className="mt-6 text-xl font-semibold tracking-[-0.04em] text-white">{title}</h3>
               <p className="mt-4 text-sm leading-6 text-zinc-400">{body}</p>
             </article>
           ))}
         </div>
+      </SectionShell>
+
+      <SectionShell id="logo" eyebrow="Logo prototypes" title="Five marks for a micro-app foundry." intro="I am leaning toward Cellmark Forge for clarity, with Anvil T as the premium wordmark direction. These are custom SVG marks, not icon-pack placeholders.">
+        <LogoPrototypeGrid />
       </SectionShell>
 
       <SectionShell id="use-cases" eyebrow="Use cases" title="Small apps for serious work." intro="The first wedge is not a platform. It is one workflow your team repeats every week, packaged into something safer and easier to reuse.">
@@ -393,7 +395,7 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button type="button" onClick={onDemo} className="h-12 bg-[#d96b3b] px-7 text-base text-white hover:bg-[#ef7a45]">
-              Get my tiny app sketch <ArrowRight className="ml-2 h-4 w-4" />
+              Get my tiny app sketch <ArrowRight className="ml-2 h-4 w-4" weight="bold" />
             </Button>
             <a href="#use-cases" className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/10 px-7 text-base font-medium text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#d96b3b]/60">
               Explore use cases
@@ -406,7 +408,7 @@ export function MarketingLanding({ onDemo }: MarketingLandingProps) {
 }
 
 type WorkbenchNodeProps = {
-  icon: typeof FileSpreadsheet;
+  icon: Icon;
   title: string;
   label: string;
   lines: string[];
@@ -417,7 +419,7 @@ function WorkbenchNode({ icon: Icon, title, label, lines }: WorkbenchNodeProps) 
     <div data-forge-node className="rounded-[1.35rem] border border-white/10 bg-white/[0.045] p-4 opacity-100">
       <div className="flex items-start gap-3">
         <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-[#08090a] text-[#f4c7b1]">
-          <Icon className="h-4 w-4" />
+          <Icon className="h-4 w-4" weight="duotone" />
         </div>
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500">{label}</p>
@@ -451,7 +453,7 @@ function MiniPanel({ title, value }: MiniPanelProps) {
 }
 
 type FloatingChipProps = {
-  icon: typeof Database;
+  icon: Icon;
   label: string;
   className: string;
 };
@@ -459,7 +461,7 @@ type FloatingChipProps = {
 function FloatingChip({ icon: Icon, label, className }: FloatingChipProps) {
   return (
     <div data-orbit-chip className={`absolute hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.08] px-4 py-2 text-xs font-medium text-white shadow-[rgba(0,0,0,0.35)_0px_18px_50px] backdrop-blur-xl md:flex ${className}`}>
-      <Icon className="h-3.5 w-3.5 text-[#f4c7b1]" />
+      <Icon className="h-3.5 w-3.5 text-[#f4c7b1]" weight="duotone" />
       {label}
     </div>
   );

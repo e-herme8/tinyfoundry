@@ -23,7 +23,7 @@ This branch contains the first marketing UI/UX direction:
 - Tailwind CSS
 - Framer Motion
 - Anime.js
-- lucide-react
+- @phosphor-icons/react
 - ESLint
 
 ## Run Locally
